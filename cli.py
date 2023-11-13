@@ -14,10 +14,10 @@ if __name__ == '__main__':
     while(leaveLoop == False):
   ### It's the player turn
       if(turnCounter % 2 == 0):
-        printBoard()
+        printBoard(board)
         numberPicked = int(input("\nChoose a number [1-9]: "))
         if(numberPicked >= 1 or numberPicked <= 9):
-          modifyArray(numberPicked, 'X')
+          modifyArray(numberPicked, 'X', board)
           possibleNumbers.remove(numberPicked)
         else:
           print("Invalid input. Please try again.")
@@ -28,7 +28,7 @@ if __name__ == '__main__':
           other_player_choice = random.choice(possibleNumbers)
           print("\nOther Player's Choice: ", other_player_choice)
           if(other_player_choice in possibleNumbers):
-            modifyArray(other_player_choice, 'O')
+            modifyArray(other_player_choice, 'O', board)
             possibleNumbers.remove(other_player_choice)
             turnCounter += 1
             break
