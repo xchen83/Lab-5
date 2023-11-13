@@ -14,7 +14,7 @@ def make_empty_board():
         [7, 8, 9],
     ]
 
-def printBoard():
+def printBoard(board):
     for x in range(rows):
         print("\n-|---|---|---|-")
         print(" |", end="")
@@ -40,7 +40,7 @@ def other_player(player):
     return "O" if player == "X" else "X"
 
 #define modifyArray
-def modifyArray(num, turn):
+def modifyArray(num, turn, board):
     num -= 1
     if(num == 0):
       board[0][0] = turn
